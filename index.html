@@ -105,7 +105,7 @@
             MapPin = ic('MapPin'), Network = ic('Network'), PenTool = ic('PenTool'), Phone = ic('Phone'),
             Search = ic('Search'), Send = ic('Send'), Sparkles = ic('Sparkles'), Star = ic('Star'), Tag = ic('Tag'),
             TrendingUp = ic('TrendingUp'), Users = ic('Users'), Zap = ic('Zap'), Bell = ic('Bell'),
-            Check = ic('Check'), Shield = ic('Shield'), GripVertical = ic('GripVertical'), Eye = ic('Eye'), EyeOff = ic('EyeOff'), Pin = ic('Pin');
+            Check = ic('Check'), Shield = ic('Shield'), GripVertical = ic('GripVertical'), Eye = ic('Eye'), EyeOff = ic('EyeOff'), Pin = ic('Pin'), ExternalLink = ic('ExternalLink');
 
         // ─── TRANSLATIONS ──────────────────────────────────────────────
         const TR = {
@@ -361,9 +361,9 @@
                 talentIds: [1, 5, 6, 7, 8], articleCount: 131, talentCount: 15,
                 articles: [
                     { id: 101, title: "GaN on Si: Epitaxy and Devices", authors: [{ name: "Hidekazu Umeda", talentId: 5 }], journal: "Wide Bandgap Semiconductors for Power Electronics", year: 2021, citations: 35, tags: ["GaN", "Epitaxy", "Power Electronics"] },
+                    { id: 104, title: "利用MOVPE法在GaN/藍寶石基板上透過石墨烯進行GaN的遠程外延生長", authors: [{ name: "卡齊米拉斯·巴多卡斯", talentId: 6 }], journal: "學位論文", year: 2026, citations: 50, tags: ["MOVPE", "GaN", "Graphene"] },
                     { id: 102, title: "Epitaxial lateral overgrowth of GaN on molecular beam epitaxy GaN buffer layers on Si substrates", authors: [{ name: "Shulin Gu", talentId: null }, { name: "Rong Zhang", talentId: null }], journal: "Journal of Physics D: Applied Physics", year: 2001, citations: 112, tags: ["HVPE", "Buffer Layers"] },
-                    { id: 103, title: "200mm GaN-on-Si epitaxy and e-mode device technology", authors: [{ name: "D. Marcon", talentId: null }, { name: "Y. N. Saripalli", talentId: null }, { name: "S. Decoutere", talentId: null }], journal: "2015 IEEE International Electron Devices Meeting (IEDM)", year: 2015, citations: 205, tags: ["GaN-on-Si", "e-mode"] },
-                    { id: 104, title: "利用MOVPE法在GaN/藍寶石基板上透過石墨烯進行GaN的遠程外延生長", authors: [{ name: "卡齊米拉斯·巴多卡斯", talentId: 6 }], journal: "學位論文", year: 2026, citations: 0, tags: ["MOVPE", "GaN", "Graphene"] }
+                    { id: 103, title: "200mm GaN-on-Si epitaxy and e-mode device technology", authors: [{ name: "D. Marcon", talentId: null }, { name: "Y. N. Saripalli", talentId: null }, { name: "S. Decoutere", talentId: null }], journal: "2015 IEEE International Electron Devices Meeting (IEDM)", year: 2015, citations: 205, tags: ["GaN-on-Si", "e-mode"] }
                 ]
             },
             "EUV Pellicle (極紫外光光罩薄膜)": {
@@ -1095,7 +1095,12 @@
                                             <div className="flex gap-1.5 flex-wrap">
                                                 {item.tags.map(tag => <span key={tag} className="text-[10px] font-bold px-2 py-0.5 bg-slate-100 text-slate-500 rounded">{tag}</span>)}
                                             </div>
-                                            <span className="text-xs font-bold text-slate-400 flex items-center gap-1"><GitMerge className="w-3.5 h-3.5" />{tr.citLabel} {item.citations}</span>
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-xs font-bold text-slate-400 flex items-center gap-1"><GitMerge className="w-3.5 h-3.5" />{tr.citLabel} {item.citations}</span>
+                                                <button onClick={(e) => { e.stopPropagation(); window.open(item.url || '#', '_blank'); }} className="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 shadow-sm border border-indigo-100 hover:border-indigo-200">
+                                                    <ExternalLink className="w-3.5 h-3.5" /> 查看原文
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
