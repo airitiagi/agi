@@ -105,7 +105,8 @@
             MapPin = ic('MapPin'), Network = ic('Network'), PenTool = ic('PenTool'), Phone = ic('Phone'),
             Search = ic('Search'), Send = ic('Send'), Sparkles = ic('Sparkles'), Star = ic('Star'), Tag = ic('Tag'),
             TrendingUp = ic('TrendingUp'), Users = ic('Users'), Zap = ic('Zap'), Bell = ic('Bell'),
-            Check = ic('Check'), Shield = ic('Shield'), GripVertical = ic('GripVertical'), Eye = ic('Eye'), EyeOff = ic('EyeOff'), Pin = ic('Pin'), ExternalLink = ic('ExternalLink');
+            Check = ic('Check'), Shield = ic('Shield'), GripVertical = ic('GripVertical'), Eye = ic('Eye'), EyeOff = ic('EyeOff'), Pin = ic('Pin'), ExternalLink = ic('ExternalLink'),
+            Calculator = ic('Calculator'), Coins = ic('Coins'), PiggyBank = ic('PiggyBank'), Flame = ic('Flame');
 
         // ─── TRANSLATIONS ──────────────────────────────────────────────
         const TR = {
@@ -166,6 +167,17 @@
                 ecoTitle: '跨領域合作生態圈', coAuthTitle: '核心協作學者', papersTitle: '核心研發成果清單',
                 yearlyTitle: '年度分析 (Yearly Analysis)', yearlyDesc: '呈現歷年發文量與被引用次數的變化，評估學者的長期活躍度。',
                 pubsLabel: '發表篇數', citedLabel: '被引用次數', noPubData: '尚無歷年發表數據',
+                roiBadge: 'AI ROI 試算器',
+                roiTitle: '您的研發預算，正有 21% 燒在「找資料」上',
+                roiSubtitle: '根據《Design Studies》研究〈How design engineers spend their time〉，每投入 1 億元研發人事預算，就有 2,100 萬元虛耗在低效檢索上。輸入您的團隊規模，看看導入 AGI 後每年能搶回多少錢。',
+                roiInputHeadcount: '研發人員數', roiInputSalary: '平均年薪（含福利）',
+                roiWasteLabel: '每年虛耗在低效檢索的研發成本', roiSavingsLabel: '導入 AGI 後，每年淨省下',
+                roiPlanLabel: '系統建議方案', roiMultiplier: (n) => `= AGI 年費的 ${n} 倍`,
+                roiCta: '立即登入，把這筆錢留下來',
+                roiFootnote: '資料來源：《Design Studies》〈How design engineers spend their time〉。試算結果為估算值，僅供參考，實際節省效益依企業使用情況而異。',
+                roiPlanStarter: '入門版', roiPlanPro: '專業版', roiPlanFlagship: '旗艦版',
+                roiPlanStarterTarget: '中小型研發團隊', roiPlanProTarget: '中大型上市公司、多產品線', roiPlanFlagshipTarget: '跨國巨頭',
+                roiPeopleUnit: '人', roiPerYear: '/ 年',
             },
             'zh-CN': {
                 platformName: '华艺全球研发洞察', platformEn: 'Airiti Global R&D Insight',
@@ -225,6 +237,17 @@
                 ecoTitle: '跨领域合作生态圈', coAuthTitle: '核心协作学者', papersTitle: '核心研发成果清单',
                 yearlyTitle: '年度分析 (Yearly Analysis)', yearlyDesc: '呈现历年发文量与被引用次数的变化，评估学者的长期活跃度。',
                 pubsLabel: '发表篇数', citedLabel: '被引用次数', noPubData: '暂无历年发表数据',
+                roiBadge: 'AI ROI 试算器',
+                roiTitle: '您的研发预算，正有 21% 烧在"找资料"上',
+                roiSubtitle: '根据《Design Studies》研究〈How design engineers spend their time〉，每投入 1 亿元研发人事预算，就有 2,100 万元虚耗在低效检索上。输入您的团队规模，看看导入 AGI 后每年能抢回多少钱。',
+                roiInputHeadcount: '研发人员数', roiInputSalary: '平均年薪（含福利）',
+                roiWasteLabel: '每年虚耗在低效检索的研发成本', roiSavingsLabel: '导入 AGI 后，每年净省下',
+                roiPlanLabel: '系统建议方案', roiMultiplier: (n) => `= AGI 年费的 ${n} 倍`,
+                roiCta: '立即登录，把这笔钱留下来',
+                roiFootnote: '数据来源：《Design Studies》〈How design engineers spend their time〉。试算结果为估算值，仅供参考，实际节省效益依企业使用情况而异。',
+                roiPlanStarter: '入门版', roiPlanPro: '专业版', roiPlanFlagship: '旗舰版',
+                roiPlanStarterTarget: '中小型研发团队', roiPlanProTarget: '中大型上市公司、多产品线', roiPlanFlagshipTarget: '跨国巨头',
+                roiPeopleUnit: '人', roiPerYear: '/ 年',
             },
             'en': {
                 platformName: 'Airiti Global R&D Insight', platformEn: 'AGI Platform',
@@ -283,6 +306,17 @@
                 ecoTitle: 'Collaboration Ecosystem', coAuthTitle: 'Core Co-Authors', papersTitle: 'Key R&D Publications',
                 yearlyTitle: 'Yearly Analysis', yearlyDesc: 'Historical publication volume and citation changes to evaluate long-term researcher activity.',
                 pubsLabel: 'Publications', citedLabel: 'Citations', noPubData: 'No historical data',
+                roiBadge: 'AI ROI Calculator',
+                roiTitle: '21% of Your R&D Budget Is Burning on Manual Search',
+                roiSubtitle: 'Per the Design Studies research "How design engineers spend their time," every NT$100M in R&D payroll wastes NT$21M on inefficient retrieval. Enter your team size to see how much AGI can win back for you every year.',
+                roiInputHeadcount: 'R&D Headcount', roiInputSalary: 'Avg. Annual Cost / Employee',
+                roiWasteLabel: 'Wasted on inefficient retrieval / year', roiSavingsLabel: 'Net savings with AGI / year',
+                roiPlanLabel: 'Recommended Plan', roiMultiplier: (n) => `= ${n}x AGI's annual fee`,
+                roiCta: "Log In to Lock In These Savings",
+                roiFootnote: 'Source: Design Studies, "How design engineers spend their time." Estimates only; actual savings vary by organization.',
+                roiPlanStarter: 'Starter', roiPlanPro: 'Professional', roiPlanFlagship: 'Flagship',
+                roiPlanStarterTarget: 'Small & mid-size R&D teams', roiPlanProTarget: 'Large listed companies, multi-product lines', roiPlanFlagshipTarget: 'Multinational enterprises',
+                roiPeopleUnit: '', roiPerYear: '/ yr',
             }
         };
 
@@ -603,6 +637,95 @@
         );
 
         // ─── DATABASE SHOWCASE ─────────────────────────────────────────
+        // ─── ROI CALCULATOR ────────────────────────────────────────────
+        const roiPlans = (tr) => ([
+            { name: tr.roiPlanStarter, target: tr.roiPlanStarterTarget, price: 350000, max: 30 },
+            { name: tr.roiPlanPro, target: tr.roiPlanProTarget, price: 600000, max: 80 },
+            { name: tr.roiPlanFlagship, target: tr.roiPlanFlagshipTarget, price: 1000000, max: Infinity },
+        ]);
+        const fmtNT = (n) => 'NT$ ' + Math.round(n).toLocaleString('en-US');
+
+        const ROICalculator = ({ tr, setIsLoggedIn }) => {
+            const [headcount, setHeadcount] = useState(80);
+            const [salary, setSalary] = useState(1200000);
+
+            const plans = roiPlans(tr);
+            const plan = plans.find(p => headcount <= p.max) || plans[plans.length - 1];
+
+            const totalPayroll = headcount * salary;
+            const wastedCost = Math.round(totalPayroll * 0.21);
+            const netSavings = Math.max(wastedCost - plan.price, 0);
+            const multiplier = (wastedCost / plan.price).toFixed(1);
+
+            return (
+                <div className="py-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+                    <div className="absolute inset-0 dot-grid opacity-20"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+                    <div className="max-w-6xl mx-auto px-6 relative z-10">
+                        <div className="text-center mb-12">
+                            <span className="inline-flex items-center gap-1.5 bg-rose-500/15 text-rose-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider mb-5">
+                                <Calculator className="w-3.5 h-3.5" />{tr.roiBadge}
+                            </span>
+                            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight max-w-3xl mx-auto leading-tight">{tr.roiTitle}</h2>
+                            <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed text-sm">{tr.roiSubtitle}</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl">
+                            {/* Inputs */}
+                            <div className="lg:col-span-2 flex flex-col gap-8 justify-center">
+                                <div>
+                                    <div className="flex items-center justify-between mb-2">
+                                        <label className="text-slate-300 text-sm font-bold flex items-center gap-2"><Users className="w-4 h-4 text-indigo-400" />{tr.roiInputHeadcount}</label>
+                                        <span className="text-white font-black font-mono text-lg">{headcount.toLocaleString()} {tr.roiPeopleUnit}</span>
+                                    </div>
+                                    <input type="range" min="5" max="500" step="5" value={headcount}
+                                        onChange={(e) => setHeadcount(Number(e.target.value))}
+                                        className="w-full accent-indigo-500 h-2 rounded-lg cursor-pointer" />
+                                </div>
+                                <div>
+                                    <div className="flex items-center justify-between mb-2">
+                                        <label className="text-slate-300 text-sm font-bold flex items-center gap-2"><Coins className="w-4 h-4 text-amber-400" />{tr.roiInputSalary}</label>
+                                        <span className="text-white font-black font-mono text-lg">{fmtNT(salary)}</span>
+                                    </div>
+                                    <input type="range" min="600000" max="3000000" step="50000" value={salary}
+                                        onChange={(e) => setSalary(Number(e.target.value))}
+                                        className="w-full accent-amber-500 h-2 rounded-lg cursor-pointer" />
+                                </div>
+
+                                <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-4 flex items-start gap-3">
+                                    <Flame className="w-5 h-5 text-rose-400 flex-shrink-0 mt-0.5" />
+                                    <p className="text-xs text-slate-400 leading-relaxed">{tr.roiFootnote}</p>
+                                </div>
+                            </div>
+
+                            {/* Output */}
+                            <div className="lg:col-span-3 flex flex-col justify-center gap-5">
+                                <div className="bg-rose-950/40 border border-rose-500/30 rounded-2xl p-6">
+                                    <div className="text-rose-300 text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-2"><AlertCircle className="w-3.5 h-3.5" />{tr.roiWasteLabel}</div>
+                                    <div className="text-3xl md:text-4xl font-black text-rose-400 font-mono">{fmtNT(wastedCost)}</div>
+                                </div>
+
+                                <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-6 relative overflow-hidden">
+                                    <div className="absolute -right-6 -top-6 w-28 h-28 bg-emerald-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                                    <div className="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-2 relative z-10"><PiggyBank className="w-3.5 h-3.5" />{tr.roiSavingsLabel}</div>
+                                    <div className="text-4xl md:text-5xl font-black text-emerald-400 font-mono relative z-10">{fmtNT(netSavings)}</div>
+                                    <div className="mt-3 flex flex-wrap items-center gap-2 relative z-10">
+                                        <span className="bg-emerald-500 text-white text-xs font-black px-3 py-1.5 rounded-full">{tr.roiMultiplier(multiplier)}</span>
+                                        <span className="text-slate-400 text-xs">{tr.roiPlanLabel}: <b className="text-white">{plan.name}</b> · {fmtNT(plan.price)}{tr.roiPerYear} · {plan.target}</span>
+                                    </div>
+                                </div>
+
+                                <button onClick={() => setIsLoggedIn(true)}
+                                    className="w-full sm:w-auto self-start px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-black rounded-2xl transition-colors shadow-xl shadow-indigo-500/20 flex items-center gap-2.5">
+                                    <Sparkles className="w-4 h-4" />{tr.roiCta}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
         const DatabaseShowcase = ({ tr }) => (
             <div className="py-20 bg-slate-900 relative overflow-hidden">
                 <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(rgba(99,102,241,0.12) 1.5px,transparent 1.5px)', backgroundSize: '32px 32px' }}></div>
@@ -1792,6 +1915,7 @@
                                 </div>
                             </div>
 
+                            {!isLoggedIn && <ROICalculator tr={tr} setIsLoggedIn={setIsLoggedIn} />}
                             <DatabaseShowcase tr={tr} />
                             <SubscribedUpdates isLoggedIn={isLoggedIn} setView={navigateTo} setIsLoggedIn={setIsLoggedIn} tr={tr} setCurrentDomain={setCurrentDomain} customKeywords={customKeywords} readTopics={readTopics} markAsRead={markAsRead} />
                             <ReportAccess setView={setView} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} tr={tr} />
